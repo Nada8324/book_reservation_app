@@ -1,5 +1,5 @@
 import 'package:book_reservation_app/constant.dart';
-import 'package:book_reservation_app/features/splash/presentation/views/splash_view.dart';
+import 'package:book_reservation_app/features/start/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
