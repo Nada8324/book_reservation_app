@@ -1,17 +1,17 @@
 import 'package:book_reservation_app/constant.dart';
-import 'package:book_reservation_app/features/splash/presentaion/views/splash1.dart';
+import 'package:book_reservation_app/features/splash/presentaion/views/splash_view.dart';
 import 'package:book_reservation_app/features/start/presentation/views/widgets/fade_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SplashViewBody extends StatefulWidget {
-  const SplashViewBody({super.key});
+class StartViewBody extends StatefulWidget {
+  const StartViewBody({super.key});
 
   @override
-  State<SplashViewBody> createState() => _SplashViewBodyState();
+  State<StartViewBody> createState() => _StartViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody>
+class _StartViewBodyState extends State<StartViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<double> fadeAnimation;
@@ -22,7 +22,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       Duration(seconds: 2),
       () {
-        Get.to(const Splash1(),
+        Get.off(() => const SplashView(),
             transition: Transition.fadeIn, duration: transitionDuration);
       },
     );
@@ -37,7 +37,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: purble,
+      backgroundColor: purple,
       body: FadeText(fadeAnimation: fadeAnimation),
     );
   }

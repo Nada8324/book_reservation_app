@@ -1,4 +1,4 @@
-import 'package:book_reservation_app/features/start/presentation/views/widgets/splash_view_body.dart';
+import 'package:book_reservation_app/features/splash/presentaion/views/widgets/splash_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatelessWidget {
@@ -7,7 +7,7 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        //backgroundColor: purble,
-        body: SplashViewBody());
+      body: SplashViewBody(),
+    );
   }
 }
