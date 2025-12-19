@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DotsIndicator extends StatelessWidget {
   final int count;
@@ -19,8 +20,8 @@ class DotsIndicator extends StatelessWidget {
         (index) => AnimatedContainer(
           duration: const Duration(milliseconds: 300),
           margin: const EdgeInsets.symmetric(horizontal: 6),
-          width:  8,
-          height: 8,
+          width: 8.w,
+          height: 8.h,
           decoration: BoxDecoration(
             color: currentIndex == index
                 ? Colors.white

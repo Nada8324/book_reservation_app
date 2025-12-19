@@ -1,8 +1,10 @@
 import 'package:book_reservation_app/constant.dart';
+import 'package:book_reservation_app/features/login/presentation/view/login_view.dart';
 import 'package:book_reservation_app/features/splash/presentaion/views/splash_view.dart';
 import 'package:book_reservation_app/features/start/presentation/views/widgets/fade_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class StartViewBody extends StatefulWidget {
   const StartViewBody({super.key});
@@ -15,17 +17,12 @@ class _StartViewBodyState extends State<StartViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<double> fadeAnimation;
+
   @override
   void initState() {
     super.initState();
     initFadeAnimation();
-    Future.delayed(
-      Duration(seconds: 2),
-      () {
-        Get.off(() => const SplashView(),
-            transition: Transition.fadeIn, duration: transitionDuration);
-      },
-    );
+    navigationMethod();
   }
 
   @override
@@ -55,5 +52,17 @@ class _StartViewBodyState extends State<StartViewBody>
       ),
     );
     animationController.forward();
+  }
+
+  Future<void> navigationMethod() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool? seenSplash = prefs.getBool('seenSplash') ?? false;
+    Future.delayed(
+      Duration(seconds: 2),
+      () {
+        Get.off(() => seenSplash ? LoginView() : SplashView(),
+            transition: Transition.fadeIn, duration: transitionDuration);
+      },
+    );
   }
 }

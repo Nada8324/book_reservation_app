@@ -1,8 +1,9 @@
 import 'package:book_reservation_app/constant.dart';
-import 'package:book_reservation_app/features/splash/presentaion/view_models/splash_view_model.dart';
-import 'package:book_reservation_app/features/splash/presentaion/views/widgets/dots_indecator';
+import 'package:book_reservation_app/features/splash/data/models/splash_view_model.dart';
+import 'package:book_reservation_app/features/splash/presentaion/views/widgets/dots_indecator.dart';
 import 'package:book_reservation_app/features/splash/presentaion/views/widgets/splash_gradiant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashItem extends StatelessWidget {
   final SplashData data;
@@ -41,27 +42,27 @@ class SplashItem extends StatelessWidget {
                       count: totalCount,
                       currentIndex: currentIndex,
                     ),
-                    const SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     Text(
                       data.title,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: backgroundColor,
-                      ),
+                      style: TextStyle(
+                          fontSize: 28.sp,
+                          fontWeight: FontWeight.bold,
+                          color: backgroundColor,
+                          fontFamily: null),
                     ),
                     Text(
                       data.description,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 14,
+                      style: TextStyle(
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: backgroundColor,
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 20.h,
                     ),
                     InkWell(
                       onTap: () {
@@ -69,16 +70,16 @@ class SplashItem extends StatelessWidget {
                       },
                       child: Container(
                         alignment: Alignment.center,
-                        height: 56,
+                        height: 56.h,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(15.r),
                             color: backgroundColor),
                         child: Text(
                           data.firstButton,
                           style: TextStyle(
                               color: purple,
-                              fontSize: 18,
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.w600),
                         ),
                       ),
@@ -90,7 +91,7 @@ class SplashItem extends StatelessWidget {
                         child: Text(data.secondButton,
                             style: TextStyle(
                                 color: backgroundColor,
-                                fontSize: 16,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.w400)))
                   ],
                 ),

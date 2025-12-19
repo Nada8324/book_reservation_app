@@ -1,6 +1,7 @@
 import 'package:book_reservation_app/constant.dart';
 import 'package:book_reservation_app/features/start/presentation/views/start_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -9,15 +10,19 @@ void main() {
 
 class Bookly extends StatelessWidget {
   const Bookly({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(fontFamily: 'ProximaNovaSoft').copyWith(
-          scaffoldBackgroundColor: backgroundColor,
-        ),
-        home: StartView());
+    return ScreenUtilInit(
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return GetMaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(fontFamily: 'ProximaNovaSoft').copyWith(
+                scaffoldBackgroundColor: backgroundColor,
+              ),
+              home: StartView());
+        });
   }
 }

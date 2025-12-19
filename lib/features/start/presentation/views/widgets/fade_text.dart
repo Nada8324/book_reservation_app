@@ -1,5 +1,6 @@
 import 'package:book_reservation_app/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FadeText extends StatelessWidget {
   const FadeText({
@@ -14,10 +15,10 @@ class FadeText extends StatelessWidget {
     return Center(
       child: FadeTransition(
         opacity: fadeAnimation,
-        child: const Text(
+        child: Text(
           'Bookly',
           style: TextStyle(
-            fontSize: 78,
+            fontSize: 78.sp,
             color: backgroundColor,
             fontWeight: FontWeight.bold,
           ),

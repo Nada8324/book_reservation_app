@@ -1,5 +1,5 @@
 import 'package:book_reservation_app/core/utils/assets_data.dart';
-import 'package:book_reservation_app/features/splash/presentaion/view_models/splash_view_model.dart';
+import 'package:book_reservation_app/features/splash/data/models/splash_view_model.dart';
 
 final splashScreensData = [
   SplashData(

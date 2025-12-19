@@ -1,6 +1,10 @@
-import 'package:book_reservation_app/features/splash/data/splash_view_data.dart';
+import 'package:book_reservation_app/features/login/presentation/view/login_view.dart';
+import 'package:book_reservation_app/features/splash/presentaion/view_models/splash_view_data.dart';
 import 'package:book_reservation_app/features/splash/presentaion/views/widgets/splash_item.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -52,21 +56,22 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   void secondButtonTap() {
     if (currentIndex < splashScreensData.length - 1) {
-      // Get.off(() => LoginView());
+      Get.off(() => LoginView());
     } else {
-      // آخر صفحة → نرجع للشاشة الأولى
       pageController.jumpToPage(0);
     }
   }
 
-  void firstButtonTap() {
+  Future<void> firstButtonTap() async {
     if (currentIndex < splashScreensData.length - 1) {
       pageController.nextPage(
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOut,
       );
     } else {
-      // Get.off(() => LoginView());
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setBool('seenSplash', true);
+      Get.off(() => LoginView());
     }
   }
 }

@@ -1,0 +1,18 @@
+import 'package:book_reservation_app/features/login/presentation/view/widgets/login_view_body.dart';
+import 'package:flutter/material.dart';
+
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
+
+  @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: LoginViewBody(),
+    );
+  }
+}
