@@ -3,6 +3,7 @@ import 'package:book_reservation_app/features/start/presentation/views/start_vie
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const Bookly());
@@ -19,7 +20,8 @@ class Bookly extends StatelessWidget {
         builder: (context, child) {
           return GetMaterialApp(
               debugShowCheckedModeBanner: false,
-              theme: ThemeData(fontFamily: 'ProximaNovaSoft').copyWith(
+              theme: ThemeData(fontFamily: GoogleFonts.nunito().fontFamily)
+                  .copyWith(
                 scaffoldBackgroundColor: backgroundColor,
               ),
               home: StartView());

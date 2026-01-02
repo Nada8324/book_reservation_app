@@ -1,6 +1,6 @@
 import 'package:book_reservation_app/constant.dart';
 import 'package:book_reservation_app/features/splash/data/models/splash_view_model.dart';
-import 'package:book_reservation_app/features/splash/presentaion/views/widgets/dots_indecator.dart';
+import 'package:book_reservation_app/core/widgets/dots_indecator.dart';
 import 'package:book_reservation_app/features/splash/presentaion/views/widgets/splash_gradiant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

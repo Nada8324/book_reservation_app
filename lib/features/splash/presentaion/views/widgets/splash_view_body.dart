@@ -1,4 +1,4 @@
-import 'package:book_reservation_app/features/login/presentation/view/login_view.dart';
+import 'package:book_reservation_app/features/auth/login/presentation/view/login_view.dart';
 import 'package:book_reservation_app/features/splash/presentaion/view_models/splash_view_data.dart';
 import 'package:book_reservation_app/features/splash/presentaion/views/widgets/splash_item.dart';
 import 'package:flutter/material.dart';
